@@ -10,9 +10,13 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { WidgetLibraryComponent } from './widget-library/widget-library.component';
 import { WidgetComponent } from './widget/widget.component';
+import { MatGridListModule} from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddWidgetFormButtonOnOffComponent} from './add-widget-form-button-on-off/add-widget-form-button-on-off.component';
 
 const appRoutes: Routes = [
   {
@@ -35,6 +39,9 @@ const appRoutes: Routes = [
     component: LoginComponent,
     pathMatch: 'full'
   },
+  { path: 'addWidgetFormButtonOnOff',
+    component: AddWidgetFormButtonOnOffComponent
+  },
   { path: '**', component: NotFoundComponent }
 ];
 
@@ -47,17 +54,21 @@ const appRoutes: Routes = [
     NavigationBarComponent,
     DashboardComponent,
     WidgetLibraryComponent,
-    WidgetComponent
+    WidgetComponent,
+    AddWidgetFormButtonOnOffComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    MatGridListModule,
+    MatListModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
