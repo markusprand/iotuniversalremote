@@ -15,8 +15,12 @@ import { WidgetLibraryComponent } from './widget-library/widget-library.componen
 import { WidgetComponent } from './widget/widget.component';
 import { MatGridListModule} from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddWidgetFormButtonOnOffComponent} from './add-widget-form-button-on-off/add-widget-form-button-on-off.component';
+import { MatSelectModule } from '@angular/material/select';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatCardModule} from '@angular/material/card';
 
 const appRoutes: Routes = [
   {
@@ -63,12 +67,16 @@ const appRoutes: Routes = [
     FormsModule,
     AppRoutingModule,
     MatGridListModule,
+    MatFormFieldModule,
     MatListModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      {enableTracing: true} // <-- debugging purposes only
     ),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatSelectModule,
+    MatProgressSpinnerModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

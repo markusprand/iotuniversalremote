@@ -23,4 +23,8 @@ export class ApiService {
   postRegister(registerData: RegisterViewModel): Observable<any> {
     return this.http.post(this.SEND_REGISTER_URL, registerData);
   }
+/*
+  postAddWidgetButtonOnOff(registerData: RegisterViewModel): Observable<any> {
+    return this.http.post(this.SEND_REGISTER_URL, registerData);
+  }*/
 }

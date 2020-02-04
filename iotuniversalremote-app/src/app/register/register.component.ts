@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../shared/api.services';
-import {LoginViewModel} from '../login/login.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ export class RegisterComponent implements OnInit {
     password: '',
     confirmPassword: ''
   };
-  constructor(private  apiService: ApiService) { }
+  constructor(private  apiService: ApiService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   register(): void {
     this.apiService.postRegister(this.model).subscribe(
       res => {
-        location.reload();
+        this.router.navigate(['login']);
       },
       err => {
         alert('An error has occurred while register user');

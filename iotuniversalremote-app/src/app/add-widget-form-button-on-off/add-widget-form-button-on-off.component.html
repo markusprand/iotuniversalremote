@@ -1,1 +1,44 @@
-<p>add-widget-form-button-on-off works!</p>
+<h4>place new Widget</h4>
+<form name="form" #f="ngForm" (ngSubmit)="addWidget()" novalidate class="feedback-form">
+  <div>
+    <h6>Label/Name:</h6>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Label" [(ngModel)]="model.label" name="label" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <h6>Gateway:</h6>
+    <mat-form-field>
+      <mat-label>Select Gateway</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let gateway of gateway" [value]="gateway.value">
+          {{gateway.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <h6>Function:</h6>
+    <mat-form-field>
+      <mat-label>Select Function</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let function of function" [value]="function.value">
+          {{function.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div>
+    <button type="submit"  class="btn btn-info pull-right">
+      <i class="fa fa-envelope-o"></i>
+      <span> Add Widget</span>
+    </button>
+  </div>
+</form>
+
+
+
+
+
+
+
