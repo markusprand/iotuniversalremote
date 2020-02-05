@@ -1,8 +1,9 @@
 <h4>place new Widget</h4>
+
 <form name="form" #f="ngForm" (ngSubmit)="addWidget()" novalidate class="feedback-form">
   <div>
     <h6>Label/Name:</h6>
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <input matInput placeholder="Label" [(ngModel)]="model.label" name="label" required>
     </mat-form-field>
   </div>

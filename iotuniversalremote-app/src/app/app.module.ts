@@ -21,6 +21,7 @@ import { AddWidgetFormButtonOnOffComponent} from './add-widget-form-button-on-of
 import { MatSelectModule } from '@angular/material/select';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatCardModule} from '@angular/material/card';
+import { MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   {
@@ -76,7 +77,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatSelectModule,
     MatProgressSpinnerModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
